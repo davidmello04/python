@@ -1,9 +1,9 @@
-import random
+from random import choice
 
-a1 = input(('Qual o nome do primeiro aluno? '))
-a2 = input(('Qual o nome do segundo aluno? '))
-a3 = input(('Qual o nome do terceiro aluno? '))
-a4 = input(('Qual o nome do quarto aluno? '))
+a1 = str(input('Qual o nome do primeiro aluno? '))
+a2 = str(input('Qual o nome do segundo aluno? '))
+a3 = str(input('Qual o nome do terceiro aluno? '))
+a4 = str(input('Qual o nome do quarto aluno? '))
 escolhido =[a1, a2, a3, a4]
-sorteio = random.choice(escolhido)
+sorteio = choice(escolhido)
 print('O aluno escolhido foi {}.'.format(sorteio))
