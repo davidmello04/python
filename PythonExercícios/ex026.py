@@ -6,5 +6,5 @@ print("""Faça um programa que leia uma frase e mostre:
 frase = str(input('\nDigite uma frase: ')).strip().upper()
 
 print('\nQuantas vezes aparece a letra A: {}'.format(frase.count('A')))
-print('Em que posição ela aparece a primeira vez: {}'.format(frase.find('A')))
-print('Em que posição ela aparece a ultima vez: {}'.format(frase.rfind('A')))
+print('Em que posição ela aparece a primeira vez: {}'.format(frase.find('A')+1))
+print('Em que posição ela aparece a ultima vez: {}'.format(frase.rfind('A')+1))
