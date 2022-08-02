@@ -13,3 +13,4 @@ if valorcasa / parcelamento <= (salario * 30 / 100):
     print('O seu parcelamento será de R${:.2f}'.format(valorcasa / parcelamento))
 else:
     print('Infelizmente o seu empréstimo não foi aprovado!')
+    print('O seu parcelamento seria de R${:.2f}'.format(valorcasa / parcelamento))
