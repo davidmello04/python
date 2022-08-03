@@ -6,7 +6,7 @@ print('-='*20)
 
 print('Começou!')
 print('1 - Pedra \n2 - Papel \n3 - Tesoura')
-escolha = str(input('Digite a opção escolhida: '))
+escolha = str(input('Digite a opção escolhida: ')).strip().lower()
 
 a = 'pedra'
 b = 'papel'
