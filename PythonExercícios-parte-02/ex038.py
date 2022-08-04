@@ -1,5 +1,5 @@
-a = int(input('Digite um número: '))
-b = int(input('Digite outro número: '))
+a = int(input('Digite o primeiro número: '))
+b = int(input('Digite o segundo número: '))
 
 if a == b:
     print('Não existe valor maior, os dois são iguais!')

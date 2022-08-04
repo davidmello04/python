@@ -1,16 +1,20 @@
+from sqlite3 import paramstyle
+
+
 print('-='*30)
 print('Aprovação de empréstimo bancário para a compra da sua casa!')
 print('-='*30)
 
-valorcasa = float(input('Qual o valor da casa desejada? R$'))
-salario = float(input('Qual o valor do seu salário? R$'))
-parcelas = float(input('Em quantos anos você deseja fazer o parcelamento? '))
+valorcasa = float(input('Valor da casa: R$'))
+salario = float(input('Salário do comprador? R$'))
+parcelas = int(input('Quantos anos de financiamento? '))
 
-parcelamento = 12 * parcelas
+parcelamento = valorcasa / (parcelas * 12)
+mínimo = (salario * 30 / 100)
 
-if valorcasa / parcelamento <= (salario * 30 / 100):
-    print('Parabéns! Seu empréstimo foi APROVADO!')
-    print('O seu parcelamento será de R${:.2f}'.format(valorcasa / parcelamento))
+print('\033[34mPara pagar uma casa de R${:.2f} em {} anos\033[m'.format(valorcasa, parcelas), end='')
+print('\033[34m a parcela será de R${:.2f}\033[m'.format(parcelamento))
+if parcelamento <= mínimo:
+    print('\033[32mEmpréstimo pode ser CONCEDIDO!\033[m')
 else:
-    print('Infelizmente o seu empréstimo não foi aprovado!')
-    print('O seu parcelamento seria de R${:.2f}'.format(valorcasa / parcelamento))
+    print('\033[31mInfelizmente o empréstimo foi NEGADO!\033[m')

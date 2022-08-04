@@ -1,25 +1,56 @@
-from random import choice
+from random import randint
+from time import sleep
+itens = ('Pedra', 'Papel', 'Tesoura')
+computador = randint(0, 2)
 
 print('-='*20)
-print('JOGO - PEDRA, PAPEL E TESOURA')
+print('JOKENPO - PEDRA, PAPEL E TESOURA')
 print('-='*20)
 
-print('Começou!')
-print('1 - Pedra \n2 - Papel \n3 - Tesoura')
-escolha = str(input('Digite a opção escolhida: ')).strip().lower()
+print('''Começou!
+[ 0 ] - Pedra
+[ 1 ] - Papel
+[ 2 ] - Tesoura''')
 
-a = 'pedra'
-b = 'papel'
-c = 'tesoura'
+jogador = int(input('Qual é a sua jogada? '))
 
-sorteio = [a, b, c]
-resultado = choice(sorteio)
+print('JO')
+sleep(1)
+print('KEN')
+sleep(1)
+print('PO!!!')
 
-print('\033[34mO computador escolheu {} e você {}.\033[m'.format(resultado, escolha))
+print('\033[34m-=\033[m'*11)
+print('\033[34mComputador jogou {}\033[m'.format(itens[computador]))
+print('\033[34mVocê jogou {}\033[m'.format(itens[jogador]))
+print('\033[34m-=\033[m'*11)
 
-if  escolha == a and resultado == c or escolha == b and resultado == a or escolha == c and resultado == b:
-    print('\033[32mParabéns, você ganhou!\033[m')
-elif escolha == a and resultado == a or escolha == b and resultado == b or escolha == c and resultado == c:
-    print('\033[33mEmpate!\033[m')
-elif escolha == a and resultado == b or escolha == b and resultado == c or escolha == c and resultado == a:
-    print('\033[31mVocê perdeu!\033[m')
+if computador == 0: # Pedra
+    if jogador == 0:
+        print('\033[33mEMPATE!\033[m')
+    elif jogador == 1:
+        print ('\033[32mVOCÊ VENCEU!!!\033[m')
+    elif jogador == 2:
+        print ('\033[31mCOMPUTADOR VENCEU!\033[m')
+    else:
+        print('Jogada Inválida!')
+
+elif computador == 1: # Papel
+    if jogador == 1:
+        print('\033[33mEMPATE!\033[m')
+    elif jogador == 2:
+        print ('\033[32mVOCÊ VENCEU!!!\033[m')
+    elif jogador == 0:
+        print ('\033[31mCOMPUTADOR VENCEU!\033[m')
+    else:
+        print('Jogada Inválida!')
+
+elif computador == 2: # Tesoura
+    if jogador == 2:
+        print('\033[33mEMPATE!\033[m')
+    elif jogador == 0:
+        print ('\033[32mVOCÊ VENCEU!!!\033[m')
+    elif jogador == 1:
+        print ('\033[31mCOMPUTADOR VENCEU!\033[m')
+    else:
+        print('Jogada Inválida!')

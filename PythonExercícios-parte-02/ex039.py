@@ -6,16 +6,32 @@ print('-='*20)
 
 ano = date.today().year
 
-nascimento = int(input('Em qual ano você nasceu? '))
-idade = ano - nascimento
+sexo = int(input('''Qual o seu sexo:
+[ 1 ] Masculino
+[ 2 ] Feminino
+Digite 1 ou 2 para escolher: '''))
 
-print('Você tem {} anos!'.format(idade))
+if sexo == 1:
+    print('Você tem que fazer o alistamento militar obrigatório.')
+    nascimento = int(input('Ano de nascimento: '))
+    idade = ano - nascimento
 
-if idade >= 18:
-    if idade == 18:
-        print('É hora de se alistar!')
+    print('Você tem {} anos em {}.'.format(idade, ano))
+
+    if idade >= 18:
+        if idade == 18:
+            print('É hora de se alistar!')
+        else:
+            saldo = idade - 18
+            print('Seu alistamento está atrasado, você deveria ter se alistado há {} anos!'.format((saldo)))
+            anoalistamento = ano - saldo
+            print('Seu alistamento foi em {}'.format(anoalistamento))
     else:
-        print('Seu alistamento está atrasado em {} anos!'.format((idade - 18))) 
+        saldo = 18 - idade
+        print('Ainda não é hora de se alistar, ainda faltam {} anos para o alistamento!'.format((saldo)))
+        anoalistamento = ano + saldo
+        print('Seu alistamento será em {}'.format(anoalistamento))
+elif sexo == 2:
+    print('Você não precisa fazer alistamento militar obrigatório.')
 else:
-    print('Ainda não é hora de se alistar, ainda faltam {} anos!'.format((18-idade)))
-
+    print('Opção inválida.')
