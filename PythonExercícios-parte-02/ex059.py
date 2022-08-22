@@ -1,7 +1,7 @@
-valor1 = 0
-valor2 = 0
+from time import sleep
+valor1 = int(input('Digite um valor: '))
+valor2 = int(input('Digite outro valor: '))
 cont = 0
-soma = mult = maior = novosnum = 0
 while cont != 5:
     print('''--- MENU ---
     [1] SOMAR
@@ -9,8 +9,6 @@ while cont != 5:
     [3] MAIOR
     [4] NOVOS NÚMEROS
     [5] SAIR DO PROGRAMA''')
-    valor1 = int(input('Digite um valor: '))
-    valor2 = int(input('Digite outro valor: '))
     cont = int(input('Digite sua opção: '))
     print('Os valores digitados foram {} e {}'.format(valor1, valor2))
     if cont == 1:
@@ -26,4 +24,12 @@ while cont != 5:
             maior = valor2
         print('O maior número é {}'.format(maior))
     elif cont == 4:
-        print('Você pode digitar os novos números.')
+        print('Informe os novos números.')
+        valor1 = int(input('Digite um valor: '))
+        valor2 = int(input('Digite outro valor: '))
+    elif cont == 5:
+        print('Finalizando...')
+    else:
+        print('Opção inválida. Tente novamente!')
+    sleep(2)
+print('Fim do programa! Volte sempre!')

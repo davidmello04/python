@@ -1,4 +1,4 @@
-print('Faça um programa que leia o primeiro termo e a razão de uma PA. no final, mostre os 10 primeiros termos\ndessa progressão.')
+print('Faça um programa que leia o primeiro termo e a razão de uma PA.\nNo final, mostre os 10 primeiros termos dessa progressão.')
 
 a = int(input('Informe o primeiro termo da PA: '))
 r = int(input('Informe a razão: '))
