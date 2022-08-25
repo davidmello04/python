@@ -5,7 +5,9 @@ while True:
     print('CADASTRE UMA PESSOA')
     print('-'*30)
     idade = int(input('Idade: '))
-    sexo = str(input('Sexo: [M]/[F] ')).upper().strip()
+    sexo = ' '
+    while sexo not in 'MF':
+        sexo = str(input('Sexo: [M]/[F] ')).upper().strip()
     print('-'*30)
     if idade > 18:
         maioridade += 1
@@ -13,9 +15,11 @@ while True:
         homens += 1
     if sexo == 'F' and idade < 20:
         mulhermenor += 1
-    cont += 1    
-    continuar = str(input('Deseja continuar? [S]/[N] ')).upper().strip()
-    if continuar in 'N':
+    cont += 1
+    continuar = ' '
+    while continuar not in 'SN':
+        continuar = str(input('Quer continuar? [S]/[N] ')).upper().strip()
+    if continuar == 'N':
         break
 print('Cadastros encerrados...')
 print(f'{cont} pessoas foram cadastradas.')
